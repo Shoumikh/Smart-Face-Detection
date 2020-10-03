@@ -1,6 +1,7 @@
 .rank {
   display: flex;
   justify-content: center;
+  color: white;
 }
 
 .rank > p span {

@@ -1,0 +1,11 @@
+.faceDetection {
+  display: flex;
+  justify-content: center;
+  padding: 10px 20%;
+  padding-bottom: 30px;
+}
+
+.faceDetection > img {
+  object-fit: contain;
+  max-height: 500px;
+}
