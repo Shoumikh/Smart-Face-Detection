@@ -1,10 +1,19 @@
 import React from "react";
 import "./App.css";
+import SignOut from "./SignOut";
+import Logo from "./Logo";
+import Rank from "./Rank";
+import InsertLink from "./InsertLink";
 
 function App() {
   return (
     <div className="App">
-      <h1>Get ready buddy</h1>
+      <SignOut />
+      <Logo />
+      <Rank />
+      <InsertLink />
+
+      {/* faceDetection */}
     </div>
   );
 }

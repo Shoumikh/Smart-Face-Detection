@@ -1,0 +1,8 @@
+.rank {
+  display: flex;
+  justify-content: center;
+}
+
+.rank > p span {
+  font-size: 20px;
+}

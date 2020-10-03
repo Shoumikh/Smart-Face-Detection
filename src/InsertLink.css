@@ -1,0 +1,13 @@
+.insertLink {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  align-items: center;
+  padding: 10px 20%;
+}
+
+.insertLink__info {
+  width: auto;
+  text-align: center;
+}
+
