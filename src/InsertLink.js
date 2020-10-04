@@ -47,6 +47,8 @@ function InsertLink() {
     const width = image.width;
     const height = image.height;
     console.log(`width ${width}`);
+    console.log(`height ${height}`);
+    console.log(`legt ${image.top}`);
     console.log(dataClarifai.left_col * width);
     return {
       leftCol: dataClarifai.left_col * width,

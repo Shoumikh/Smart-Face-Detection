@@ -1,8 +1,8 @@
 .faceDetection {
   display: flex;
   justify-content: center;
-  padding: 10px 20%;
-  padding-bottom: 30px;
+  margin: 10px 20%;
+  margin-bottom: 30px;
 }
 
 .faceDetection > img {
@@ -17,4 +17,8 @@
   flex-wrap: wrap;
   justify-content: center;
   cursor: pointer;
+}
+
+.faceDetection__container {
+  position: absolute;
 }
