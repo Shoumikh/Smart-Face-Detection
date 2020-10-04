@@ -27,15 +27,46 @@ function InsertLink() {
     app.models.predict(Clarifai.DEMOGRAPHICS_MODEL, inputLink).then(
       function (response) {
         //getting necessary api data for creating box around the faces
-        console.log(
-          //informatiion from response api data
-          response.outputs[0].data.regions[0].region_info.bounding_box
+        //informatiion from response api data
+        setFaceBoxInfo(
+          calculatefFaceBoxPoints(
+            response.outputs[0].data.regions[0].region_info.bounding_box
+          )
         );
       },
       function (err) {
-        // there was an error
+        console.log(err); //prints out errors if any
       }
     );
+  };
+
+  //calculates the face box points using the api informations
+  //and given image height width info
+  const calculatefFaceBoxPoints = (dataClarifai) => {
+    const image = document.getElementById("inputImage");
+    const width = image.width;
+    const height = image.height;
+    console.log(`width ${width}`);
+    console.log(dataClarifai.left_col * width);
+    return {
+      leftCol: dataClarifai.left_col * width,
+      rightCol: width - dataClarifai.right_col * width,
+      topRow: dataClarifai.top_row * height,
+      bottomRow: height - dataClarifai.bottom_row * height,
+    };
+  };
+
+  const setFaceBoxInfo = (faceBoxInfo) => {
+    console.log("info" + faceBoxInfo.leftCol);
+    dispatch({
+      type: "SET_FACEBOX",
+      faceBox: {
+        leftCol: faceBoxInfo.leftCol,
+        rightCol: faceBoxInfo.rightCol,
+        topRow: faceBoxInfo.topRow,
+        bottomRow: faceBoxInfo.bottomRow,
+      },
+    });
   };
 
   //handles changes in the text field
@@ -54,6 +85,7 @@ function InsertLink() {
       <div className="insertLink__input">
         <input onChange={handleChange} type="text" placeholder="Insert Link" />
         <button onClick={handleClick}> Detect</button>
+        {console.log(calculatefFaceBoxPoints.leftCol)}
       </div>
     </div>
   );

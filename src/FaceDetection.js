@@ -3,10 +3,20 @@ import "./FaceDetection.css";
 import { useStateValue } from "./StateProvider";
 
 function FaceDetection() {
-  const [{ input }] = useStateValue();
+  const [{ input, faceBox }] = useStateValue();
   return (
     <div className="faceDetection">
-      <img src={input} alt="" width="100%" />
+      {console.log("faceboc>>>>>" + faceBox.leftCol)}
+      <img id="inputImage" src={input} alt="" width="100%" />
+      <div
+        className="faceDetection__box"
+        style={{
+          top: faceBox.topRow,
+          bottom: faceBox.bottomRow,
+          left: faceBox.leftCol,
+          right: faceBox.rightCol,
+        }}
+      ></div>
     </div>
   );
 }
