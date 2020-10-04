@@ -3,8 +3,10 @@ import "./App.css";
 import SignOut from "./SignOut";
 import Logo from "./Logo";
 import Rank from "./Rank";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import InsertLink from "./InsertLink";
 import FaceDetection from "./FaceDetection";
+import SignIn from "./SignIn";
 import Particles from "react-tsparticles";
 
 function App() {
@@ -93,13 +95,22 @@ function App() {
           detectRetina: true,
         }}
       />
-      <div className="app__content">
-        <SignOut />
-        <Logo />
-        <Rank />
-        <InsertLink />
-        <FaceDetection />
-      </div>
+      <Router>
+        <div className="app">
+          <Switch>
+            <Route path="/signin">
+              <SignIn />
+            </Route>
+            <Route path="/">
+              <SignOut />
+              <Logo />
+              <Rank />
+              <InsertLink />
+              <FaceDetection />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }
