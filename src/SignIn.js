@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./SignIn.css";
 
 function SignIn() {
@@ -10,8 +11,12 @@ function SignIn() {
         <input className="signin__input" type="text" />
         <p className="signin__title">Password</p>
         <input className="signin__input" type="password" />
-        <button>Sign In</button>
-        <p className="signin__register">Register</p>
+        <Link to="/home">
+          <button className="signin__button">Sign In</button>
+        </Link>
+        <Link to="/register">
+          <p className="signin__register">Register</p>
+        </Link>
       </div>
     </div>
   );

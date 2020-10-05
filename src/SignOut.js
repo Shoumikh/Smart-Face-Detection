@@ -1,10 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./SignOut.css";
 
 function SignOut() {
   return (
     <div className="SignOut">
-      <p>Sign Out</p>
+      <Link to="/">
+        <p className="signOut__tag">Sign Out</p>
+      </Link>
     </div>
   );
 }

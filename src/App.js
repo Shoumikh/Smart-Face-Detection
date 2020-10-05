@@ -8,8 +8,10 @@ import InsertLink from "./InsertLink";
 import FaceDetection from "./FaceDetection";
 import SignIn from "./SignIn";
 import Particles from "react-tsparticles";
+import Register from "./Register";
 
 function App() {
+  const particleOptions = () => {};
   return (
     //for the particle Background
     <div className="App">
@@ -98,15 +100,18 @@ function App() {
       <Router>
         <div className="app">
           <Switch>
-            <Route path="/signin">
-              <SignIn />
-            </Route>
-            <Route path="/">
+            <Route path="/home">
               <SignOut />
               <Logo />
               <Rank />
               <InsertLink />
               <FaceDetection />
+            </Route>
+            <Route path="/register">
+              <Register />
+            </Route>
+            <Route path="/">
+              <SignIn />
             </Route>
           </Switch>
         </div>

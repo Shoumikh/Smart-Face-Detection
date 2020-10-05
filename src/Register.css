@@ -1,4 +1,4 @@
-.signin {
+.register {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -9,7 +9,7 @@
   position: absolute;
 }
 
-.signin__container {
+.register__container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -17,35 +17,35 @@
   box-shadow: 4px 4px 10px #000000;
 }
 
-.signin__container > h3 {
+.register__container > h3 {
   font-size: 28px;
   margin-top: 0px;
   color: lightblue;
   font-family: "Courier New", Courier, monospace;
 }
 
-.signin__title {
+.register__title {
   color: lightblue;
   margin-bottom: 5px;
   font-weight: 700;
 }
 
-.signin__input {
+.register__input {
   background-color: transparent;
   margin: 0px;
   border: 2px solid lightgrey;
   height: 25px;
   width: 200px;
   border-radius: 4px;
-  font-weight: 800;
   color: white;
+  font-weight: 800;
 }
 
-.signin__input:hover {
+.register__input:hover {
   background-color: darkslategrey;
 }
 
-.signin__button {
+.register__button {
   margin-top: 20px;
   background-color: transparent;
   padding: 7px 40px;
@@ -57,19 +57,9 @@
   border-radius: 4px;
   cursor: pointer;
   transition: transform 0.2s;
+  margin-bottom: 20px;
 }
 
-.signin__button:hover {
+.register__button:hover {
   transform: scale(1.1);
-}
-
-.signin__register {
-  color: white;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.signin__register:hover {
-  transform: scale(1.1);
-  color: orange;
 }
